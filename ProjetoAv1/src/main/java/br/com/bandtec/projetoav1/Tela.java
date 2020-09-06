@@ -256,6 +256,12 @@ public class Tela extends javax.swing.JFrame {
 
     private void gerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarActionPerformed
         // TODO add your handling code here:
+//        Nosso projeto sensor vital fez uma pesquisa que nos hospitais
+// 10% das infecções hospitalares é causada por falta de monitoramento 
+// de temp e umidade e prometemos evitar 75% desses 10%
+// e prometemos para o hospital que ira economizar 45% dos custos de manutenção
+// e ao nos contratar recebe um cupom de 25% do nosso serviço/produto
+
         String texto = orcamento.getText();
         Integer conta = Integer.valueOf(texto);
         

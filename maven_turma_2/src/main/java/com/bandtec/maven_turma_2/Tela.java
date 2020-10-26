@@ -6,9 +6,14 @@
 package com.bandtec.maven_turma_2;
 
 import java.awt.HeadlessException;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import oshi.SystemInfo;
+import oshi.hardware.GlobalMemory;
+import oshi.hardware.HardwareAbstractionLayer;
+import oshi.software.os.OperatingSystem;
 
 /**
  *
@@ -31,6 +36,17 @@ public class Tela extends javax.swing.JFrame {
      */
     public Tela() {
         initComponents();
+
+        SystemInfo si = new SystemInfo();
+        HardwareAbstractionLayer hal = si.getHardware();
+        OperatingSystem os = si.getOperatingSystem();
+        GlobalMemory memory = hal.getMemory();
+        List<String> processos = Process.printProcess(os, memory);
+        for (String processo : processos) {
+            System.out.println(processo);
+            
+        }
+            mostart1.setText(processos.get(0));
     }
 
     /**
@@ -124,7 +140,6 @@ public class Tela extends javax.swing.JFrame {
 
 //        mostart.setText((hd.hw.getProcessor().getProcessorIdentifier().getName());
 //            .toString());
-        mostart1.setText((ps.myProc.getUser()));
     }//GEN-LAST:event_mostrarActionPerformed
 
     /**
